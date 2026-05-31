@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IskoDash — By PUPians. For PUPians.</title>
+<script src="iskodash.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="iskodash.css"/>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="toast" id="toast"><span class="toast-dot"></span> Message sent! We'll be in touch soon.</div>
+
+< Website Created by: Zedrick Josef I. Vicente & Tito Kian Dave B. Palma >
+< UI and Wireframe by: Zedrick Josef I. Vicente >
+< Documentation, Backend, Databased & Polishing by Tito Kian Dave B. Palma >
+
+
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" onclick="showPage('home')">
+    <img src="iskodash_logo.png" alt="IskoDash" class="nav-logo-img" style="height:80px;width:auto;object-fit:contain"/>
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a onclick="showPage('riders')" id="nav-riders">Riders</a></li>
+    <li><a onclick="showPage('vendors')" id="nav-vendors">Vendors</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+  <div class="nav-pill">
+    <a onclick="showPage('download')" class="nav-cta">Download App</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');closeMobile()" id="mnav-home" class="active">🏠 Home</a>
+  <a onclick="showPage('services');closeMobile()" id="mnav-services">🍱 Services</a>
+  <a onclick="showPage('riders');closeMobile()" id="mnav-riders">🛵 Riders</a>
+  <a onclick="showPage('vendors');closeMobile()" id="mnav-vendors">🏪 Vendors</a>
+  <a onclick="showPage('about');closeMobile()" id="mnav-about">👥 About</a>
+  <a onclick="showPage('contact');closeMobile()" id="mnav-contact">📬 Contact</a>
+  <a onclick="showPage('download');closeMobile()" style="color:var(--r);font-weight:700">📱 Download App</a>
+</div>
+
+<!-- ═══ PAGE: HOME ═══ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div><div class="hero-grain"></div><div class="hero-grid"></div>
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow" style="margin-bottom:.6rem"><span class="line"></span> PUP Sta. Mesa Campus</div>
+        <h1 class="hero-h1">
+          Mabilis na Pagkain.<br/>
+          <span class="stroke-text">Walang pababang Building.</span>
+        </h1>
+<p class="hero-sub">Order food from Fewa's Footlong, B1T1 Siomai Rice, Kape Kuripot, Waffle Time, and many more — delivered to your building by a fellow Isko. The all-in-one campus delivery app made for PUP students.</p>
+        <div class="hero-actions">
+          <a onclick="showPage('download')" class="btn-hero-primary">Get the App <span class="arrow">→</span></a>
+          <a onclick="showPage('services')" class="btn-hero-ghost">See Services</a>
+        </div>
+        <div class="store-badges">
+          <div class="store-badge" onclick="showPage('download')"><span class="sb-icon">🍎</span><div class="sb-text"><span class="sb-label">Download on the</span><span class="sb-name">App Store</span></div></div>
+          <div class="store-badge" onclick="showPage('download')"><span class="sb-icon">🤖</span><div class="sb-text"><span class="sb-label">Get it on</span><span class="sb-name">Google Play</span></div></div>
+        </div>
+        <div class="hero-stats">
+<div class="stat-pill"><span class="sp-num">₱15</span><span class="sp-label">Flat Rate · No Hidden Fees</span></div>
+          <div class="stat-pill"><span class="sp-num">~20min</span><span class="sp-label">Avg delivery time</span></div>
+          <div class="stat-pill"><span class="sp-num">5</span><span class="sp-label">Campus vendors</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="phone-stage">
+          <div class="phone-glow"></div>
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="ps-header">
+                <div class="ps-top-row">
+                  <div><div class="ps-greeting">Good day, Isko! 👋</div><div class="ps-greeting"><strong>What are you craving today?</strong></div></div>
+                  <div class="ps-notif-btn">🔔</div>
+                </div>
+                <div class="ps-search-bar">🔍 Search food or stalls…</div>
+              </div>
+              <div class="ps-deliver-banner">
+                <div class="ps-deliver-text">WE DELIVER TO YOU! <span>No need to go down. We bring it up.</span></div>
+                <div class="ps-deliver-emoji">🛵</div>
+              </div>
+              <div class="ps-body">
+                <div class="ps-section-label">Popular in PUP Lagoon</div>
+                <div class="ps-lagoon-grid">
+                  <div class="ps-vendor-card featured"><div class="pv-emoji">🌭</div><div class="pv-name">Fewas Footlong</div><div class="pv-price">₱89</div></div>
+                  <div class="ps-vendor-card"><div class="pv-emoji">🍚</div><div class="pv-name">B1T1 Siomai</div><div class="pv-price">₱60</div></div>
+                  <div class="ps-vendor-card"><div class="pv-emoji">🍽️</div><div class="pv-name">Stall #10</div><div class="pv-price">₱75</div></div>
+                  <div class="ps-vendor-card"><div class="pv-emoji">☕</div><div class="pv-name">Kape Kuripot</div><div class="pv-price">₱35</div></div>
+                  <div class="ps-vendor-card"><div class="pv-emoji">🧇</div><div class="pv-name">Waffle Time</div><div class="pv-price">₱55</div></div>
+                </div>
+                <div class="ps-ai-box">
+  <div class="ps-ai-badge">AI</div>
+  <div class="ps-ai-text"><strong>Suggested Meetup:</strong> Today, 11:30 AM · Near PUP Lagoon<br/><span style="font-size:.5rem;opacity:.8">Light rain expected · Most of you are free · Less crowd</span></div>
+</div>
+              </div>
+              <div class="ps-bottom">
+                <div class="ps-tab act"><div class="ps-tab-icon">🏠</div>Home</div>
+                <div class="ps-tab"><div class="ps-tab-icon">📋</div>Orders</div>
+                <div class="ps-tab"><div class="ps-tab-icon">➕</div>New</div>
+                <div class="ps-tab"><div class="ps-tab-icon">💬</div>Groups</div>
+                <div class="ps-tab"><div class="ps-tab-icon">👤</div>Profile</div>
+              </div>
+            </div>
+          </div>
+<div class="float-card fc1"><div class="fc-icon">📍</div><div><div class="fc-title">Live Check-In</div><div class="fc-sub">Indoors · 4th Floor – Room 410</div></div></div>
+          <div class="float-card fc2"><div class="fc-icon">✅</div><div><div class="fc-title">Order Delivered!</div><div class="fc-sub">Rate your experience</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="tb-item"><span class="tb-dot"></span>100% Student-Built</div>
+    <div class="tb-item"><span class="tb-dot"></span>PUP Sta. Mesa Campus</div>
+    <div class="tb-item"><span class="tb-dot"></span>₱15 Flat Delivery</div>
+    <div class="tb-item"><span class="tb-dot"></span>AI Powered Meetups</div>
+    <div class="tb-item"><span class="tb-dot"></span>Real-Time Tracking</div>
+    <div class="tb-item"><span class="tb-dot"></span>No Hidden Fees</div>
+
+  </div>
+  <div class="grad-divider"></div>
+
+  <!-- CAMPUS VENDORS -->
+  <section class="sec sec-vendors">
+    <div class="sec-inner">
+      <div class="vendors-intro reveal">
+        <div class="tag" style="justify-content:center">Your Favorite Lagoon Foods</div>
+        <h2 class="display-h" style="text-align:center">All your PUP faves,<br/><span class="it">delivered</span></h2>
+        <p class="body-lg" style="text-align:center;max-width:500px;margin:0 auto">From Fewa's classic footlong to Kape Kuripot's iced coffee — every stall in the Lagoon, now at your fingertips.</p>
+      </div>
+      <div class="vendors-grid">
+        <div class="vendor-card reveal bestseller" onclick="showPage('services')"><span class="vc-emoji">🌭</span><h3>Fewa's Footlong</h3><div class="vc-type">Footlong Sandwich</div><div class="vc-price">Starting at ₱89</div><div class="vc-rating">★★★★★ 4.8</div></div>
+        <div class="vendor-card reveal reveal-d1" onclick="showPage('services')"><span class="vc-emoji">🍚</span><h3>B1T1 Siomai Rice</h3><div class="vc-type">Siomai with Rice</div><div class="vc-price">Starting at ₱60</div><div class="vc-rating">★★★★★ 4.7</div></div>
+        <div class="vendor-card reveal reveal-d2" onclick="showPage('services')"><span class="vc-emoji">🍽️</span><h3>Stall #10</h3><div class="vc-type">Best Seller</div><div class="vc-price">Starting at ₱75</div><div class="vc-rating">★★★★½ 4.6</div></div>
+        <div class="vendor-card reveal reveal-d3" onclick="showPage('services')"><span class="vc-emoji">☕</span><h3>Kape Kuripot</h3><div class="vc-type">Iced Coffee</div><div class="vc-price">Starting at ₱35</div><div class="vc-rating">★★★★★ 4.9</div></div>
+        <div class="vendor-card reveal reveal-d3" onclick="showPage('services')"><span class="vc-emoji">🧇</span><h3>Waffle Time</h3><div class="vc-type">Classic Waffle</div><div class="vc-price">Starting at ₱55</div><div class="vc-rating">★★★★½ 4.7</div></div>
+      </div>
+      <div style="text-align:center;margin-top:1rem">
+        <a onclick="showPage('services')" class="btn-blue">View All Menu Items →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI FEATURES -->
+  <section class="sec sec-ai">
+    <div class="sec-inner">
+      <div style="text-align:center" class="reveal">
+        <div class="tag" style="justify-content:center">AI Powered</div>
+        <h2 class="display-h" style="text-align:center">Smart features for <span class="it">campus life</span></h2>
+        <p class="body-lg" style="text-align:center;margin:0 auto .5rem">Powered by intelligent systems designed around PUP's unique environment.</p>
+      </div>
+      <div class="ai-grid">
+        <div class="ai-card reveal"><div class="ai-badge">AI</div><h3>AI Suggested Meetups</h3><p>Our AI suggests the best meetup time and place based on weather, schedule, and your group's availability. No more "saan tayo mag-meet?"</p></div>
+        <div class="ai-card reveal reveal-d1"><div class="ai-badge">LIVE</div><h3>Real-Time Arrival Check-Ins</h3><p>Rider and customer check in based on live location and weather conditions. Know exactly when your food arrives at your building.</p></div>
+        <div class="ai-card reveal reveal-d2"><div class="ai-badge">GROUP</div><h3>Group Spaces & Orders</h3><p>Create groups, order together, and verify in seconds. Split the bill effortlessly among barkada — no more chasing people for payment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="sec sec-how">
+    <div class="sec-inner">
+      <div style="text-align:center;margin-bottom:0">
+        <div class="tag reveal" style="justify-content:center;color:var(--sky)">How It Works</div>
+        <h2 class="display-h reveal" style="color:#fff;text-align:center">Order in <span class="it" style="color:rgba(255,255,255,0.45)">three steps</span></h2>
+      </div>
+      <div class="how-layout">
+        <div class="steps reveal">
+          <div class="step-item"><div class="step-num">01</div><div class="step-text"><h4>Browse & Choose</h4><p>Browse your favorite Lagoon stalls or scroll through your campus feed. Fewa's Footlong, B1T1 Siomai, Kape Kuripot — all at your fingertips.</p></div></div>
+          <div class="step-item"><div class="step-num">02</div><div class="step-text"><h4>Place Your Order</h4><p>Add to cart and pay via Cash on Delivery, GCash, or Maya. Your order is broadcast to nearby student riders immediately.</p></div></div>
+          <div class="step-item"><div class="step-num">03</div><div class="step-text"><h4>Track & Receive</h4><p>Watch your rider on a live campus map. Get real-time check-in updates and weather alerts until your food arrives at your building.</p></div></div>
+        </div>
+        <div class="stats-grid reveal">
+          <div class="stat-block"><div class="sb-num">782</div><div class="sb-label">Deliveries needed to break even in 2026</div></div>
+          <div class="stat-block"><div class="sb-num">35%</div><div class="sb-label">Safety margin above break-even</div></div>
+          <div class="stat-block"><div class="sb-num">₱15</div><div class="sb-label">Flat delivery fee — campus wide</div></div>
+          <div class="stat-block"><div class="sb-num">~20</div><div class="sb-label">Minutes average delivery time</div></div>
+          <div class="stat-block wide"><div class="sb-num" style="font-size:1.1rem">Student-Powered Economy</div><div class="sb-label">Riders earn per delivery, on their own flexible schedule — no boss, no fixed hours. Be a micro-entrepreneur!</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL-TIME TRACKING -->
+  <section class="sec sec-track">
+    <div class="sec-inner">
+      <div class="tag reveal">Track Your Order</div>
+      <h2 class="display-h reveal">Live tracking, <span class="it">every step</span></h2>
+      <div class="track-layout">
+        <div class="track-phone reveal">
+          <div class="track-screen">
+          <div class="track-header">
+            <div class="track-back">←</div>
+            <div class="track-title">Track Your Order</div>
+            <div class="track-eta-badge">
+              <div class="track-eta-num">12 min</div>
+              <span class="track-eta-label">Est. arrival</span>
+            </div>
+          </div>            
+          <div class="track-map">
+            <div class="track-map-grid"></div>
+            <div class="track-path"></div>
+            <div class="track-path-active"></div>
+            <div class="track-rider-dot"></div>
+            <div class="track-dest">📍 Your Building</div>
+            <div class="track-arriving">Arriving in your Building 🏢</div>
+          </div>
+            <div class="track-body">
+  <div class="track-status-row"><div class="track-status-dot"></div><div class="track-status-text">Rider is on the way!</div></div>
+  <div class="track-checkin">
+  <div class="track-ci-label">LIVE CHECK-IN</div>
+  <div class="track-ci-loc">Indoors · 4th Floor – Room 410</div>
+  <div style="font-size:.52rem;color:rgba(255,255,255,0.65);margin-top:2px">Checked in = 9:41 AM ✅</div>
+</div>  <div class="track-weather"><div style="font-size:1.5rem">🌧️</div><div><div class="tw-temp">26°C</div><div class="tw-desc">Light Rain · Stay dry!<br/>Your rider is almost there.</div></div></div>
+  <div class="track-msg-btn">💬 Message Rider</div>
+</div>
+          </div>
+        </div>
+        <div class="track-features reveal reveal-d1">
+          <div class="track-feat"><div class="tf-icon">📍</div><div><div class="tf-title">Live Campus Map</div><div class="tf-desc">Watch your rider move in real time on an interactive PUP campus map — no more guessing where they are.</div></div></div>
+          <div class="track-feat"><div class="tf-icon">🌤️</div><div><div class="tf-title">Weather-Aware Delivery</div><div class="tf-desc">Real-time weather integration means riders and customers get weather alerts so everyone stays safe, rain or shine.</div></div></div>
+          <div class="track-feat"><div class="tf-icon">📲</div><div><div class="tf-title">Push Notifications</div><div class="tf-desc">Get notified at every stage: order confirmed, rider assigned, rider arrived at store, and food on the way to you.</div></div></div>
+          <div class="track-feat"><div class="tf-icon">💬</div><div><div class="tf-title">In-App Messaging</div><div class="tf-desc">Chat directly with your rider for special instructions, gate access info, or exact floor location — no number needed.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section class="sec sec-audience">
+    <div class="sec-inner">
+      <div style="text-align:center" class="reveal">
+        <div class="tag" style="justify-content:center">Join IskoDash</div>
+        <h2 class="display-h" style="text-align:center">Built for the whole <span class="it">PUP community</span></h2>
+      </div>
+      <div class="aud-grid">
+        <div class="aud-card riders reveal">
+          <div class="aud-badge">🛵 For Riders</div>
+          <h3>Earn While<br/>You Study</h3>
+          <p>Deliver orders between classes on your own schedule. No boss, no fixed shifts — just pick up your phone and earn.</p>
+          <div class="aud-perks">
+            <div class="aud-perk"><div class="aud-check">✓</div>Earn per completed delivery</div>
+            <div class="aud-perk"><div class="aud-check">✓</div>100% flexible hours</div>
+            <div class="aud-perk"><div class="aud-check">✓</div>Daily GCash/Maya payouts</div>
+            <div class="aud-perk"><div class="aud-check">✓</div>Campus-only short distances</div>
+          </div>
+          <a onclick="showPage('riders')" class="btn-white">Become a Rider →</a>
+        </div>
+        <div class="aud-card vendors reveal reveal-d1">
+          <div class="aud-badge">🏪 For Vendors</div>
+          <h3>Grow Your<br/>Campus Store</h3>
+          <p>Reach the entire PUP student market with lower commissions than GrabFood and Foodpanda — and a merchant dashboard built for Lagoon vendors.</p>
+          <div class="aud-perks">
+            <div class="aud-perk"><div class="aud-check">✓</div>Lower commission than mainstream apps</div>
+            <div class="aud-perk"><div class="aud-check">✓</div>Onboard in 24 hours</div>
+            <div class="aud-perk"><div class="aud-check">✓</div>Real-time order dashboard</div>
+            <div class="aud-perk"><div class="aud-check">✓</div>Reduce queue congestion</div>
+          </div>
+          <a onclick="showPage('vendors')" class="btn-white">Partner with Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL FEED -->
+  <section class="sec sec-feed" style="background:var(--surface2)">
+    <div class="sec-inner">
+      <div class="reveal">
+        <div class="tag">IskoDash Social</div>
+        <h2 class="display-h">Discover food through your <span class="it">campus feed</span></h2>
+        <p class="body-lg">Share your meals, see what's trending, and tap any post to reorder from the same Lagoon stall instantly.</p>
+      </div>
+      <div class="feed-grid" style="margin-top:2.5rem">
+        <div class="feed-card reveal"><div class="feed-img f1">🌭</div><div class="feed-body"><div class="feed-user"><div class="feed-av">JA</div><div><div class="feed-uname">@jiro.agad</div><div class="feed-store">📍 PUP Lagoon – Fewa's Footlong</div></div></div><p class="feed-cap">Sulit na sulit yung footlong dito! Perfect break meal 🌭 Delivered in 12 mins sa 4th floor! IskoDash grabe!</p><div class="feed-acts"><div class="feed-act like-btn" data-count="42">❤️ 42</div><div class="feed-act">💬 8</div><div class="feed-act">📤 Share</div></div></div></div>
+        <div class="feed-card reveal reveal-d1"><div class="feed-img f2">☕</div><div class="feed-body"><div class="feed-user"><div class="feed-av" style="background:var(--grad-blue)">KD</div><div><div class="feed-uname">@kyle.delrosario</div><div class="feed-store">📍 PUP Lagoon – Kape Kuripot</div></div></div><p class="feed-cap">Iced coffee for ₱35 lang, delivered to the lib! 😱☕ No need to go down! IskoDash talaga ang pinaka!</p><div class="feed-acts"><div class="feed-act like-btn" data-count="67">❤️ 67</div><div class="feed-act">💬 14</div><div class="feed-act">📤 Share</div></div></div></div>
+        <div class="feed-card reveal reveal-d2"><div class="feed-img f3">🍚</div><div class="feed-body"><div class="feed-user"><div class="feed-av">ZV</div><div><div class="feed-uname">@zedrick.vicente</div><div class="feed-store">📍 PUP Lagoon – B1T1 Siomai Rice</div></div></div><p class="feed-cap">B1T1 Siomai Rice + Waffle combo? Absolute steal at ₱115! Ordered twice na this week 🔥 IskoDash forever!</p><div class="feed-acts"><div class="feed-act like-btn" data-count="88">❤️ 88</div><div class="feed-act">💬 21</div><div class="feed-act">📤 Share</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec sec-testi">
+    <div class="sec-inner">
+      <div style="text-align:center" class="reveal">
+        <div class="tag" style="justify-content:center;color:var(--sky)">Testimonials</div>
+        <h2 class="display-h" style="color:#fff;text-align:center">Loved by the <span class="it" style="color:rgba(255,255,255,0.40)">PUP community</span></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Finally an app that gets campus life. No more running to the Lagoon between classes. IskoDash is a lifesaver for busy PUPians."</p><div class="testi-user"><div class="testi-av">MR</div><div><div class="testi-name">Maria Reyes</div><div class="testi-role">BSIT 3-2, PUP Sta. Mesa</div></div></div></div>
+        <div class="testi-card reveal reveal-d1"><div class="testi-stars">★★★★★</div><p class="testi-quote">"As a vendor, IskoDash helped me reach more students. Orders came in even during rush hour without long lines at my stall."</p><div class="testi-user"><div class="testi-av">LB</div><div><div class="testi-name">Liza Buenaventura</div><div class="testi-role">Kape Kuripot Vendor, PUP Lagoon</div></div></div></div>
+        <div class="testi-card reveal reveal-d2"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Earning ₱200–300 extra on school days just delivering between free periods. The flexible model is perfect for students like me."</p><div class="testi-user"><div class="testi-av">TP</div><div><div class="testi-name">Tristan Palma</div><div class="testi-role">Student Rider, BSIT 4-5</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-cta">
+    <div class="sec-inner">
+      <div class="cta-card reveal">
+        <div class="cta-orb cta-orb-1"></div><div class="cta-orb cta-orb-2"></div>
+        <h2>Mabilis. Affordable.<br/>At para sa ating PUP Community.</h2>
+        <p>Join PUP students already using IskoDash to order, earn, and connect on campus. By PUPians, For PUPians.</p>
+        <div class="cta-btns">
+          <a onclick="showPage('download')" class="btn-w-solid">Download for iOS</a>
+          <a onclick="showPage('download')" class="btn-w-solid">Download for Android</a>
+          <a onclick="showPage('vendors')" class="btn-white">Partner with Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PAGE: SERVICES ═══ -->
+<div class="page" id="page-services">
+  <div class="inner-hero">
+    <div class="inner-hero-inner">
+      <div class="tag">Our Services</div>
+      <h1>Everything on Campus,<br/>Delivered to You</h1>
+      <p>From Fewa's Footlong to Waffle Time — all your PUP Lagoon favorites delivered within 20 minutes. Plus campus supplies, group orders, and a social food feed.</p>
+    </div>
+  </div>
+  <section class="sec" style="background:var(--cream)">
+    <div class="sec-inner">
+      <div class="tag reveal">Core Services</div>
+      <h2 class="display-h reveal">What IskoDash <span class="it">delivers</span></h2>
+      <div class="services-full-grid">
+        <div class="service-full-card reveal"><div class="sf-icon">🍱</div><h3>IskoDash Food</h3><p>Hot meals from Fewa's Footlong, B1T1 Siomai Rice, Stall #10, Kape Kuripot, Waffle Time, and all PUP Lagoon vendors — delivered to your building.</p><div class="sf-price">₱15 Flat Delivery</div></div>
+        <div class="service-full-card reveal reveal-d1"><div class="sf-icon">📦</div><h3>IskoDash Mart</h3><p>School supplies, snacks, and campus essentials without leaving your study session or classroom.</p><div class="sf-price">₱15 Flat Delivery</div></div>
+        <div class="service-full-card reveal reveal-d2"><div class="sf-icon">👥</div><h3>Group Spaces</h3><p>Create groups, order together, split the bill and verify in seconds. Perfect for barkada orders between classes.</p><div class="sf-price">Free Feature</div></div>
+        <div class="service-full-card reveal"><div class="sf-icon">🤖</div><h3>AI Suggested Meetups</h3><p>Our AI suggests the best meetup time and place based on your schedule, weather, and group availability.</p><div class="sf-price">Free Feature</div></div>
+        <div class="service-full-card reveal reveal-d1"><div class="sf-icon">📍</div><h3>Live Order Tracking</h3><p>Real-time campus map tracking with weather-aware check-ins. Watch your rider from the Lagoon to your floor.</p><div class="sf-price">Free Feature</div></div>
+        <div class="service-full-card reveal reveal-d2"><div class="sf-icon">💬</div><h3>Campus Social Feed</h3><p>Discover trending food through posts from fellow Iskos. Like, comment, and reorder from any vendor with one tap.</p><div class="sf-price">Free Feature</div></div>
+      </div>
+      <div style="margin-top:3rem;text-align:center">
+        <div class="tag" style="justify-content:center">PUP Lagoon Partners</div>
+        <h2 class="display-h reveal" style="text-align:center">Our Campus <span class="it">Vendor Partners</span></h2>
+        <div class="vendors-grid" style="margin-top:2rem">
+          <div class="vendor-card reveal bestseller"><span class="vc-emoji">🌭</span><h3>Fewa's Footlong</h3><div class="vc-type">Footlong Sandwich</div><div class="vc-price">₱89 | ★★★★★ 4.8</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">🍚</span><h3>B1T1 Siomai Rice</h3><div class="vc-type">Siomai with Rice</div><div class="vc-price">₱60 | ★★★★★ 4.7</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">🍽️</span><h3>Stall #10</h3><div class="vc-type">Tapsilogan</div><div class="vc-price">₱75 | ★★★★ 4.6</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">☕</span><h3>Kape Kuripot</h3><div class="vc-type">Iced Coffee</div><div class="vc-price">₱35 | ★★★★★ 4.9</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">🧇</span><h3>Waffle Time</h3><div class="vc-type">Classic Waffle</div><div class="vc-price">₱55 | ★★★★ 4.7</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">🧋</span><h3>Stall #15</h3><div class="vc-type">Milktea & Samalamig</div><div class="vc-price">₱55 | ★★★★ 4.5</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">🖨</span><h3>Stall #08</h3><div class="vc-type">Printing Shop</div><div class="vc-price">₱5 - ₱10 | ★★★★★ 5</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">📚</span><h3>Stall #12</h3><div class="vc-type">School Supplies</div><div class="vc-price">₱5 - ₱100 | ★★★★ 4.6</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">🍜</span><h3>Stall #09</h3><div class="vc-type">Fried Noodles</div><div class="vc-price">₱25 - ₱130 | ★★★★★ 5</div></div>
+          <div class="vendor-card reveal"><span class="vc-emoji">🍟</span><h3>Potato Corner</h3><div class="vc-type">French Fries</div><div class="vc-price">₱90 - ₱280 | ★★★★★ 5</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec sec-cta" style="padding-top:0"><div class="sec-inner"><div class="cta-card reveal"><div class="cta-orb cta-orb-1"></div><div class="cta-orb cta-orb-2"></div><h2>Ready to order smarter?</h2><p>Download IskoDash and get your first order delivered in minutes.</p><div class="cta-btns"><a onclick="showPage('download')" class="btn-w-solid">Download App</a><a onclick="showPage('vendors')" class="btn-white">Become a Vendor Partner</a></div></div></div></section>
+</div>
+
+<!-- ═══ PAGE: RIDERS ═══ -->
+<div class="page" id="page-riders">
+  <div class="inner-hero"><div class="inner-hero-inner"><div class="tag">For Riders</div><h1>Earn While<br/>You Study</h1><p>Deliver orders between classes on your own schedule — walking or biking within campus. No boss, no fixed shifts, daily payouts.</p></div></div>
+  <section class="sec" style="background:var(--cream)"><div class="sec-inner"><div class="rv-grid">
+    <div>
+      <div class="tag reveal">How to Earn</div>
+      <h2 class="display-h reveal" style="font-size:clamp(1.6rem,3vw,2.4rem)">Your flexible <span class="it">sideline</span></h2>
+      <p class="body-lg reveal">Pick up orders from Lagoon vendors and deliver them to classrooms and buildings within campus. Earn per delivery, cash out daily via GCash or Maya.</p>
+      <div class="req-box reveal">
+        <h4>Requirements to Sign Up</h4>
+        <div class="req-list">
+          <div class="req-item"><div class="req-check">✓</div>Active PUP student (any course)</div>
+          <div class="req-item"><div class="req-check">✓</div>Valid PUP Student ID</div>
+          <div class="req-item"><div class="req-check">✓</div>Smartphone (Android 10+ or iOS 14+)</div>
+          <div class="req-item"><div class="req-check">✓</div>GCash or Maya account</div>
+          <div class="req-item"><div class="req-check">✓</div>Bicycle or on-foot delivery only</div>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem"><a onclick="showPage('download')" class="btn-red">Sign Up as Rider →</a></div>
+    </div>
+    <div>
+      <div class="earn-card red-earn reveal">
+        <h3>Rider Earnings Potential</h3>
+        <div class="earn-grid">
+          <div class="earn-stat"><div class="en">₱15–25</div><div class="el">Earning per delivery</div></div>
+          <div class="earn-stat"><div class="en">8–15</div><div class="el">Deliveries per day (peak)</div></div>
+          <div class="earn-stat"><div class="en">₱200+</div><div class="el">Estimated daily earnings</div></div>
+          <div class="earn-stat"><div class="en">Daily</div><div class="el">GCash/Maya cashout</div></div>
+        </div>
+      </div>
+      <div class="svc-card reveal" style="margin-top:1.2rem"><div class="svc-icon-wrap">🛵</div><h3>Walk or Bike Only</h3><p>IskoDash is designed for the PUP campus environment — short distances, simple logistics. No motorcycle required. Just your legs or a bike and your phone!</p></div>
+    </div>
+  </div></div></section>
+</div>
+
+<!-- ═══ PAGE: VENDORS ═══ -->
+<div class="page" id="page-vendors">
+  <div class="inner-hero"><div class="inner-hero-inner"><div class="tag">For Vendors</div><h1>Grow Your<br/>Campus Store</h1><p>Partner with IskoDash and reach the entire PUP student body — with lower commissions than GrabFood and a dashboard designed for Lagoon vendors.</p></div></div>
+  <section class="sec" style="background:var(--cream)"><div class="sec-inner"><div class="rv-grid">
+    <div>
+      <div class="tag reveal">Why Partner with Us</div>
+      <h2 class="display-h reveal" style="font-size:clamp(1.6rem,3vw,2.4rem)">More orders, <span class="it">less hassle</span></h2>
+      <p class="body-lg reveal">IskoDash sends you digital orders directly so you can reduce long queues at your stall, manage incoming orders efficiently, and reach students who can't physically visit the Lagoon.</p>
+      <div class="req-box reveal">
+        <h4>Vendor Requirements</h4>
+        <div class="req-list">
+          <div class="req-item"><div class="req-check">✓</div>PUP campus-based food stall or vendor</div>
+          <div class="req-item"><div class="req-check">✓</div>Smartphone for order notifications</div>
+          <div class="req-item"><div class="req-check">✓</div>GCash or Maya for payouts</div>
+          <div class="req-item"><div class="req-check">✓</div>Onboard in as fast as 24 hours</div>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem"><a onclick="showPage('contact')" class="btn-blue">Apply as Vendor Partner →</a></div>
+    </div>
+    <div>
+      <div class="earn-card reveal">
+        <h3>Vendor Benefits</h3>
+        <div class="earn-grid">
+          <div class="earn-stat"><div class="en">Lower</div><div class="el">Commission vs GrabFood & Foodpanda</div></div>
+          <div class="earn-stat"><div class="en">24hrs</div><div class="el">Onboarding time</div></div>
+          <div class="earn-stat"><div class="en">Live</div><div class="el">Real-time order dashboard</div></div>
+          <div class="earn-stat"><div class="en">More</div><div class="el">Students reached without walk-ins</div></div>
+        </div>
+      </div>
+      <div style="margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="svc-card reveal"><div class="svc-icon-wrap">📊</div><h3>Vendor Dashboard</h3><p>View orders, manage menu items, and track sales all from your phone.</p></div>
+        <div class="svc-card reveal"><div class="svc-icon-wrap">📣</div><h3>In-App Promos</h3><p>Run promotional offers to get featured at the top of student searches.</p></div>
+      </div>
+    </div>
+  </div></div></section>
+</div>
+
+<!-- ═══ PAGE: ABOUT ═══ -->
+<div class="page" id="page-about">
+ <div class="inner-hero" style="
+  background-image: url('team.png');
+  background-size: 100%;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  padding: 130px clamp(1.5rem,5vw,4rem) 3rem;
+">
+  <div style="
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(80,8,12,0.05) 0%,
+      rgba(80,8,12,0.10) 50%,
+      rgba(80,8,12,0.75) 80%,
+      rgba(80,8,12,0.90) 100%
+    );
+  "></div>
+  <div style="position:relative;z-index:2;max-width:1280px;width:100%;margin:0 auto">
+    <div class="tag" style="color:var(--sky)">About Us</div>
+    <h1 style="font-family:'Unbounded',sans-serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:800;color:#fff;letter-spacing:-2px;line-height:1.05;margin-bottom:1rem;max-width:600px">Built by Iskos,<br/>For Iskos</h1>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.70);max-width:480px;line-height:1.8;font-weight:300">IskoDash is a student-centered campus delivery platform built by Group 6, BSIT 4-5 at the Polytechnic University of the Philippines.</p>
+  </div>
+</div>
+  <section class="sec" style="background:var(--cream)"><div class="sec-inner">
+    <div class="about-grid">
+<div class="about-visual reveal" style="
+  background: url('lagoon.png') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+">
+  <div style="
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.15);
+  "></div>
+</div>
+      <div class="about-text">
+        <div class="tag reveal">Our Story</div>
+        <h2 class="display-h reveal">A campus problem,<br/><span class="it">solved by students</span></h2>
+        <p class="reveal">Every day at PUP Sta. Mesa, thousands of students face the same struggle: long queues at the Lagoon, limited break time, and the impossibility of getting food between classes without being late.</p>
+        <p class="reveal">IskoDash was born from this frustration — a hyper-localized, peer-to-peer food delivery platform designed exclusively for the PUP campus environment.</p>
+        <div class="about-kpi reveal">
+          <div class="kpi-box"><div class="kn">5</div><div class="kl">Lagoon Vendor Partners</div></div>
+          <div class="kpi-box"><div class="kn">₱15</div><div class="kl">Flat Delivery Fee</div></div>
+          <div class="kpi-box"><div class="kn">782</div><div class="kl">Break-Even Deliveries</div></div>
+        </div>
+        <p class="reveal" style="font-size:.82rem;color:var(--muted);font-style:italic">"IskoDash isn't just an app. It's a PUP culture." — Group 6, BSIT 4-5</p>
+      </div>
+    </div>
+    <div style="margin-top:5rem">
+      <div class="tag reveal">The Team</div>
+      <h2 class="display-h reveal">Group 6 — <span class="it">BSIT 4-5</span></h2>
+      <p class="body-lg reveal">PUP Technopreneurship | COMP 027 | Dr. Iluminada Vivien R. Domingo</p>
+      <div class="team-grid">
+        <div class="team-card reveal"><div class="team-av" style="overflow:hidden;padding:0"><img src="kyle.png" alt="Kyle" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/></div><h4>Kyle Ferell G. Del Rosario</h4><div class="role">CEO / Team Lead</div><div class="dept">Business Strategy & Stakeholder Management</div></div>
+        <div class="team-card reveal reveal-d1"><div class="team-av" style="overflow:hidden;padding:0"><img src="zed.png" alt="Zedrick" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/></div><h4>Zedrick Josef I. Vicente</h4><div class="role">Chief Operations Officer</div><div class="dept">Logistics, Fleet & Vendor Support</div></div>
+        <div class="team-card reveal reveal-d2"><div class="team-av" style="overflow:hidden;padding:0"><img src="kian.png" alt="Tito" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/></div><h4>Tito Kian Dave B. Palma</h4><div class="role">Chief Technology Officer</div><div class="dept">App Development, Security & Scalability</div></div>
+        <div class="team-card reveal reveal-d3"><div class="team-av" style="overflow:hidden;padding:0"><img src="jiro.png" alt="Jiro" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/></div><h4>Jiro Laurenz S. Agad</h4><div class="role">Chief Marketing Officer</div><div class="dept">Branding, Social Media & User Acquisition</div></div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ═══ PAGE: CONTACT ═══ -->
+<div class="page" id="page-contact">
+  <div class="inner-hero"><div class="inner-hero-inner"><div class="tag">Get in Touch</div><h1>Let's Talk,<br/>Kapwa Isko</h1><p>Questions, vendor partnerships, or just want to learn more about IskoDash? Reach out — we're fellow PUP students too.</p></div></div>
+  <section class="sec" style="background:var(--cream)"><div class="sec-inner">
+    <div class="contact-grid">
+      <div class="contact-form-card reveal">
+        <div class="cf-title">Send us a message</div>
+        <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" placeholder="Juan"/></div><div class="form-group"><label>Last Name</label><input type="text" placeholder="dela Cruz"/></div></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="iskostudent@pup.edu.ph"/></div>
+        <div class="form-group"><label>I am a...</label><select><option>Student</option><option>Campus Vendor</option><option>Prospective Rider</option><option>Faculty/Staff</option></select></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us what's on your mind..."></textarea></div>
+        <button onclick="showToast()" class="btn-blue" style="width:100%;justify-content:center">Send Message →</button>
+      </div>
+      <div class="contact-sidebar reveal reveal-d1">
+        <div class="ci-card"><div class="ci-ico">📧</div><div class="ci-txt"><h4>Email</h4><p>iskodash@pup.edu.ph</p></div></div>
+        <div class="ci-card"><div class="ci-ico">📘</div><div class="ci-txt"><h4>Facebook</h4><p>IskoDash PH</p></div></div>
+        <div class="ci-card"><div class="ci-ico">📸</div><div class="ci-txt"><h4>Instagram</h4><p>@iskodash.ph</p></div></div>
+        <div class="ci-card"><div class="ci-ico">🏫</div><div class="ci-txt"><h4>Campus</h4><p>Polytechnic University of the Philippines, Sta. Mesa, Manila</p></div></div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ═══ PAGE: DOWNLOAD ═══ -->
+<div class="page" id="page-download">
+  <div class="inner-hero"><div class="inner-hero-inner"><div class="tag">Download IskoDash</div><h1>Experience the New<br/>Way to Lagoon!</h1><p>Available on iOS and Android. Free to download for all PUP students. Start ordering from Fewa's, Kape Kuripot, and more in seconds.</p></div></div>
+  <section class="sec" style="background:var(--cream)"><div class="sec-inner">
+    <div style="text-align:center;margin-bottom:3rem" class="reveal">
+      <div class="tag" style="justify-content:center">Get the App</div>
+      <h2 class="display-h" style="text-align:center">Download & Experience <span class="it">IskoDash</span></h2>
+    </div>
+    <div class="dl-grid">
+      <div class="dl-card reveal">
+        <span class="dl-ico">🍎</span>
+        <h3>iOS App Store</h3>
+        <p>For iPhone 8 or newer running iOS 14+. Requires 2GB storage and location services enabled for real-time delivery tracking.</p>
+        <div class="dl-qr-placeholder">📱</div>
+        <a class="btn-blue" style="width:100%;justify-content:center">Download on App Store</a>
+      </div>
+      <div class="dl-card reveal reveal-d1">
+        <span class="dl-ico">🤖</span>
+        <h3>Google Play Store</h3>
+        <p>For Android 10+ devices with minimum 3GB RAM. Requires 2GB storage, GPS, and internet connection for delivery coordination.</p>
+        <div class="dl-qr-placeholder">📱</div>
+        <a class="btn-blue" style="width:100%;justify-content:center">Get it on Google Play</a>
+      </div>
+    </div>
+    <div style="margin-top:3rem;text-align:center" class="reveal">
+      <p style="font-size:.85rem;color:var(--muted);max-width:500px;margin:0 auto">IskoDash is currently in development for PUP Sta. Mesa campus. By PUPians, For PUPians. 🎓</p>
+<p style="font-family:'Unbounded',sans-serif;font-size:.9rem;font-weight:800;color:var(--r2);margin-top:1rem;letter-spacing:.05em">MABILIS. AFFORDABLE.<br/>AT PARA SA ATING PUP COMMUNITY. ❤️</p>
+    </div>
+  </div></section>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+<a class="nav-logo" onclick="showPage('home')">
+  <img src="iskodash_logo_white.png" alt="IskoDash" style="height:200px;width:auto;object-fit:contain"/>
+</a>
+        <div style="margin-top:1.2rem;display:flex;gap:.5rem;flex-wrap:wrap">
+          <div style="font-size:.68rem;color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.06);border-radius:8px;padding:4px 10px">COMP 027: Technopreneurship</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.06);border-radius:8px;padding:4px 10px">Group 6 | BSIT 4-5</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.06);border-radius:8px;padding:4px 10px">SY 2025-2026</div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Platform</h5><ul><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('download')">Download App</a></li><li><a onclick="showPage('about')">About Us</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>For Community</h5><ul><li><a onclick="showPage('riders')">Become a Rider</a></li><li><a onclick="showPage('vendors')">Vendor Partners</a></li><li><a>Group Orders</a></li><li><a>Campus Feed</a></li></ul></div>
+      <div class="footer-col"><h5>Vendors</h5><ul><li><a>Fewa's Footlong</a></li><li><a>B1T1 Siomai Rice</a></li><li><a>Stall #10</a></li><li><a>Kape Kuripot</a></li><li><a>Waffle Time</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 IskoDash. Developed by Group 6 BSIT 4-5 | PUP Sta. Mesa | COMP 027 Technopreneurship</p>
+      <div class="footer-socials">
+  <a class="soc-btn" title="Facebook · IskoDash PH">f</a>
+  <a class="soc-btn" title="Instagram · @iskodash.ph">ig</a>
+  <a class="soc-btn" title="iskodash@pup.edu.ph">✉</a>
+</div>
+<div style="margin-top:.8rem;display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center">
+  <span style="font-size:.72rem;color:rgba(255,255,255,0.40);display:flex;align-items:center;gap:.4rem">📘 IskoDash PH</span>
+  <span style="font-size:.72rem;color:rgba(255,255,255,0.40);display:flex;align-items:center;gap:.4rem">📸 @iskodash.ph</span>
+  <span style="font-size:.72rem;color:rgba(255,255,255,0.40);display:flex;align-items:center;gap:.4rem">✉ iskodash@pup.edu.ph</span>
+</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
